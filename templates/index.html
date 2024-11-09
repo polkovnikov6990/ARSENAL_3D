@@ -37,77 +37,11 @@
         </div>
         
         <div class="button-container">
-            <button class="custom-button" type="button" id="button1" onclick="toggleButtons('weapon')">Стрелковые системы</button>
-            <button class="custom-button" type="button" id="button2" onclick="toggleButtons('closeCombat')">Средства ближнего боя</button>
-            <button class="custom-button" type="button" id="button3" onclick="toggleButtons('combatVehicles')">Вооружение боевых машин</button>
-            <button class="custom-button" type="button" id="button4" onclick="toggleButtons('opticalDevices')">Оптические приборы</button>
+
+            <a href="{{ url_for('structure') }}">
+                <button class="custom-button" type="button">Поехали разбираться</button>
+            </a>
         </div>
-
-        <div id="weapon-buttons" class="d-none">
-            <div class="row mt-4">
-                <div class="col-md-4">
-                    <button class="custom-button1">Пистолеты</button>
-                </div>
-                <div class="col-md-4">
-                    <button class="custom-button1">Пистолеты-пулеметы</button>
-                </div>
-                <div class="col-md-4">
-                    <button class="custom-button1">Автоматы</button>
-                </div>
-            </div>
-        </div>
-
-        <div id="close-combat-buttons" class="d-none">
-            <div class="row mt-4">
-                <div class="col-md-4">
-                    <button class="custom-button1">Ножи</button>
-                </div>
-                <div class="col-md-4">
-                    <button class="custom-button1">Кастеты</button>
-                </div>
-                <div class="col-md-4">
-                    <button class="custom-button1">Палки</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <script>
-        let currentActiveButton = null; // Переменная для отслеживания текущей активной кнопки
-    
-        // Функция для показа/скрытия кнопок после нажатия на любую из кнопок
-        function toggleButtons(buttonType) {
-            console.log('Button clicked: ', buttonType);  // Для отладки
-            
-            // Если нажата та же кнопка, что и в прошлый раз, то скрываем блок
-            if (currentActiveButton === buttonType) {
-                console.log('Hiding button group: ', buttonType);  // Для отладки
-                document.getElementById(buttonType + '-buttons').classList.add('d-none');
-                currentActiveButton = null;
-            } else {
-                // Скрываем все блоки с кнопками
-                const allButtons = document.querySelectorAll('.d-none');
-                allButtons.forEach(button => {
-                    button.classList.add('d-none');
-                });
-    
-                // Показываем выбранный блок с кнопками
-                const selectedButton = document.getElementById(buttonType + '-buttons');
-                selectedButton.classList.remove('d-none');
-    
-                // Обновляем переменную текущей активной кнопки
-                currentActiveButton = buttonType;
-            }
-        }
-    </script>
-    </script>
-    </script>
-    </script>
-    </script>
     
 </body>
 </html>
